@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.images {
+  display: flex;
+  gap: 2rem;
+}
+
+.images img {
+  cursor: pointer;
+}
