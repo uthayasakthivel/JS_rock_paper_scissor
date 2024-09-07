@@ -1,6 +1,8 @@
 body {
   font-family: sans-serif;
-  height: 100vh;
+}
+
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,5 +30,23 @@ body {
 }
 
 .images img {
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: cadetblue;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.modal p {
   cursor: pointer;
 }
