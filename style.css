@@ -47,6 +47,12 @@ body {
   display: none;
 }
 
-.modal p {
+.modal svg {
   cursor: pointer;
+}
+
+.modal .header {
+  display: flex;
+  justify-content: end;
+  padding: 2rem;
 }
