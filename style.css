@@ -17,6 +17,16 @@ body {
   gap: 2rem;
 }
 
+.images > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.images > div > h2 {
+  font-size: 2rem;
+}
+
 .images img {
   cursor: pointer;
 }
