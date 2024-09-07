@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -6,7 +14,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  height: 100vh;
+  background: darkgray;
 }
 
 .heading {
@@ -35,16 +44,15 @@ body {
 
 .container {
   position: relative;
-  overflow: hidden;
 }
 
 .modal {
   height: 100vh;
   width: 100vw;
-  background-color: cadetblue;
   position: absolute;
   top: 0;
   display: none;
+  background-color: cadetblue;
 }
 
 .modal svg {
@@ -55,4 +63,21 @@ body {
   display: flex;
   justify-content: end;
   padding: 2rem;
+}
+
+#check_images {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: cadetblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+#check_images img {
+  width: 400px;
+  height: 400px;
 }
