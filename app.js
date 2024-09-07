@@ -1,22 +1,18 @@
-const images = document.getElementsByClassName("image");
-const imagesArray = Array.from(images);
-console.log(imagesArray);
+const imagesArray = Array.from(document.getElementsByClassName("image"));
 const modal = document.getElementById("modal");
-const checkImages = document.getElementById("check_images");
+const imageComparisionBox = document.getElementById("images_compare");
 let selected = null;
 
 // click image
 imagesArray.forEach((image) => {
   image.addEventListener("click", () => {
-    console.log(image.children[0].getAttribute("src"));
     const imageUrl = image.children[0].getAttribute("src");
     if (selected) {
-      checkImages.removeChild(selected);
+      imageComparisionBox.removeChild(selected);
     }
     selected = document.createElement("img");
     selected.setAttribute("src", imageUrl);
-    checkImages.append(selected);
-    console.log("selected", selected);
+    imageComparisionBox.append(selected);
     if ((modal.style.display = "none")) {
       modal.style.display = "block";
     }
@@ -24,6 +20,7 @@ imagesArray.forEach((image) => {
   });
 });
 
+// Generate random image to compare with the selected image
 function generateRandomImage(selected) {
   const randomNumber = Math.floor(Math.random() * 3);
   const randomImageArray = [];
@@ -33,15 +30,17 @@ function generateRandomImage(selected) {
   const randomImage = randomImageArray[randomNumber];
   const randomImagePic = document.createElement("img");
   randomImagePic.setAttribute("src", randomImage);
-  checkImages.append(randomImagePic);
+
+  imageComparisionBox.append(randomImagePic);
   const selectedImage = selected.getAttribute("src");
   const selectedText = selectedImage.split("/").pop().split(".").shift();
   const randomText = randomImage.split("/").pop().split(".").shift();
+
   const result = checkWin(selectedText, randomText);
-  console.log(result);
   const resultText = document.createElement("h3");
   resultText.innerText = result;
-  checkImages.append(resultText);
+
+  imageComparisionBox.append(resultText);
 }
 
 function checkWin(selectedText, randomText) {
@@ -78,7 +77,7 @@ function checkWin(selectedText, randomText) {
   }
 }
 
-// Close
+// Close Button
 modal.querySelector("svg").addEventListener("click", () => {
   if ((modal.style.display = "block")) modal.style.display = "none";
 });
